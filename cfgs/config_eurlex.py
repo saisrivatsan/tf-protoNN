@@ -40,10 +40,10 @@ __C.d = 250
 __C.m = 3980
 __C.normalize_D = False
 __C.normalize_output = True
-__C.gamma = 2.5
+__C.gamma = 4.0
 __C.sW = 0.8
 __C.sB = 0.8
-__C.sZ = 0.4
+__C.sZ = 0.2
 
 # Preprocess related
 __C.num_pts_per_cluster = 10
@@ -53,14 +53,14 @@ __C.train_val_split_ratio = 0.7
 __C.train_batch_size = 256
 __C.test_batch_size = 256
 __C.learning_rate = 1e-3
-__C.wd = 1e-3
+__C.wd = 1e-1
 __C.summaries = False
 __C.train_restore_iter = 0
 __C.max_iter = 1000
 __C.HT_iter = 1
 
 # Print and Summary
-__C.train_print_iter = 10
+__C.train_print_iter = 100
 __C.val_print_iter = 100
 __C.test_print_iter = __C.max_iter
 __C.summaries_iter = 1

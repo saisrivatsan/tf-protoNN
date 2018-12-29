@@ -14,6 +14,16 @@ import scipy.io as sio
 import tensorflow as tf
 import scipy.sparse as ss
 
+def normalize(a, order = 2, axis=-1):
+    """ Normalize numpy array. Order= "inf" for infinity norm """
+    
+    if order is 'inf':
+        norm = a.max(axis)
+    else:
+        norm = np.atleast_1d(np.linalg.norm(a, order, axis))
+        
+    norm[norm==0] = 1.0
+    return a / np.expand_dims(norm, axis)
 
 def smat_to_dmat(X):
     """ Converts sparse scipy matrix to dense numpy array """
@@ -28,18 +38,6 @@ def smat_to_sparseTensor(X):
     coo = X.tocoo()
     indices = np.mat([coo.row, coo.col]).transpose()
     return tf.SparseTensorValue(indices, coo.data, coo.shape)
-
-def normalized(a, order = 2, axis=-1):
-    """ Normalize numpy array. Order= "inf" for infinity norm """
-    
-    if order is 'inf':
-        norm = a.max(axis)
-    else:
-        norm = np.atleast_1d(np.linalg.norm(a, order, axis))
-        
-    norm[norm==0] = 1.0
-    return a / np.expand_dims(norm, axis)
-
 
 def data_loader(path, config):
     """ Loads data @ path. Cross-checks with configs

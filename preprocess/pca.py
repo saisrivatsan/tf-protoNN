@@ -1,8 +1,9 @@
 from __future__ import absolute_import
 from __future__ import division
-from __future__ import print_functio
+from __future__ import print_function
 
 import faiss
+import numpy as np
 from scipy.sparse import issparse
 
 def train_pca(X, d):

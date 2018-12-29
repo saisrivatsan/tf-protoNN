@@ -145,7 +145,7 @@ class Trainer:
                 Y_pred_labels, Loss = sess.run([y_pred_labels, loss], feed_dict = {x: X, y_true: Y})
                 P = eval_utils.eval_precision_k(Y_pred_labels, Y_true)
                 vals = (iter, time_elapsed_train, Loss, P[0], P[2], P[4])
-                fmt_str = "TRAIN-BATCH Iter = %d, t = %.2f, Loss = %.2f, Prec@1: %.2f, Prec@3: %.2f, Prec@5: %.2f"%vals
+                fmt_str = "TRAIN-BATCH Iter = %d, t = %.2f, Loss = %.2f, Prec@1: %.4f, Prec@3: %.4f, Prec@5: %.4f"%vals
                 self.logger.info(fmt_str)
 
             # Print Validation Stats
@@ -165,7 +165,7 @@ class Trainer:
                 P_tot = P_tot/self.config.N_v
                 Loss_tot = Loss_tot/self.config.N_v
                 vals = (iter, time_elapsed_val, Loss_tot, P_tot[0], P_tot[2], P_tot[4])
-                fmt_str = "VAL-ALL Iter = %d, t = %.2f, Loss = %.2f, Prec@1: %.2f, Prec@3: %.2f, Prec@5: %.2f"%vals 
+                fmt_str = "VAL-ALL Iter = %d, t = %.2f, Loss = %.2f, Prec@1: %.4f, Prec@3: %.4f, Prec@5: %.4f"%vals 
                 self.logger.info(fmt_str)
                                
             # Print Test Stats
@@ -185,7 +185,7 @@ class Trainer:
                 P_tot = P_tot/self.config.Nt
                 Loss_tot = Loss_tot/self.config.Nt
                 vals = (iter, time_elapsed_test, Loss_tot, P_tot[0], P_tot[2], P_tot[4])
-                fmt_str = "TEST-ALL Iter = %d, t = %.2f, Loss = %.2f, Prec@1: %.2f, Prec@3: %.2f, Prec@5: %.2f"%vals
+                fmt_str = "TEST-ALL Iter = %d, t = %.2f, Loss = %.2f, Prec@1: %.4f, Prec@3: %.4f, Prec@5: %.4f"%vals
                 self.logger.info(fmt_str)
 
 

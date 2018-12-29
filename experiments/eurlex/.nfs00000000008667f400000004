@@ -1,0 +1,3 @@
+2018-12-29 18:13:58,307:WARNING:From /n/home13/sravindranath/.conda/envs/tf/lib/python2.7/site-packages/tensorflow/contrib/learn/python/learn/datasets/base.py:198: retry (from tensorflow.contrib.learn.python.learn.datasets.base) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use the retry module or similar alternatives.
