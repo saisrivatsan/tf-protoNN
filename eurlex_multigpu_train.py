@@ -1,4 +1,3 @@
-
 # --------------------------------------------------------
 # Tensorflow ProtoNN for Multi-label learning
 # Licensed under The MIT License [see LICENSE for details]
