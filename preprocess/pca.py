@@ -24,7 +24,7 @@ def train_pca(X, d):
         
     D = x.shape[1]
     pca = faiss.PCAMatrix(D, d)
-    pca.verbose = True
+    #pca.verbose = True
     pca.have_bias = False
         
     pca.train(x)

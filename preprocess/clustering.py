@@ -18,7 +18,7 @@ def train_kmeans(x, k, ngpu = 1):
     
     d = x.shape[1]
     clus = faiss.Clustering(d, k)
-    clus.verbose = True
+    #clus.verbose = True
     clus.niter = 20
 
     # otherwise the kmeans implementation sub-samples the training set

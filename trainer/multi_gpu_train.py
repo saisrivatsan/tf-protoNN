@@ -45,7 +45,7 @@ def tower_loss(graph, scope, x_batch, y_batch):
     
     # Assemble all of the losses for the current tower only.
     losses = tf.get_collection('losses', scope)
-    
+
     # Calculate the total loss for the current tower.
     total_loss = tf.add_n(losses, name='total_loss')
 
@@ -123,8 +123,8 @@ class Trainer:
 
         # Set log_fname
         log_suffix = datetime.now().strftime("%d_%m_%Y_%H_%M")
-        log_fname = os.path.join(self.config.out_dir_name, 'train' + log_suffix + '.txt')
-        self.logger = logger.get_logger(log_fname)
+        self.log_fname = os.path.join(self.config.out_dir_name, 'train' + log_suffix + '.txt')
+        self.logger = logger.get_logger(self.log_fname)
         
         with tf.device('/cpu:0'):
         
@@ -166,6 +166,12 @@ class Trainer:
 
                             _, y_pred_labels_batch = tf.nn.top_k(y_pred_batch, k = self.config.k, sorted = True)
                             y_pred_labels.append(y_pred_labels_batch)
+                            
+                            reg_losses = tf.get_collection('reg_losses')
+                            if len(reg_losses) > 0:
+                                reg_loss_mean = tf.reduce_mean(reg_losses)/self.config.num_gpus
+                                loss_batch += reg_loss_mean
+                            
                             loss.append(loss_batch)
 
                             # Reuse variables for the next tower.

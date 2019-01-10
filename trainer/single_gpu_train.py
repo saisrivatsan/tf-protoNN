@@ -44,8 +44,8 @@ class Trainer:
 
         # Set log_fname
         log_suffix = datetime.now().strftime("%d_%m_%Y_%H_%M")
-        log_fname = os.path.join(self.config.out_dir_name, 'train' + log_suffix + '.txt')
-        self.logger = logger.get_logger(log_fname)
+        self.log_fname = os.path.join(self.config.out_dir_name, 'train' + log_suffix + '.txt')
+        self.logger = logger.get_logger(self.log_fname)
                 
         # Input placeholders
         inp_shape = [None, self.config.D]
