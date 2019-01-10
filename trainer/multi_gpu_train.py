@@ -4,7 +4,7 @@
 # Written by Sai Srivatsa Ravindranath
 # --------------------------------------------------------
 
-# Multi-GPU train code based on <>
+# Multi-GPU train code based on https://github.com/tensorflow/models/blob/master/tutorials/image/cifar10/cifar10_multi_gpu_train.py
 
 from __future__ import absolute_import
 from __future__ import division
