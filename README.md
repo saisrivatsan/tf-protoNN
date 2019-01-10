@@ -6,7 +6,7 @@ The repository contains **ProtoNN** (a KNN based algorithm) implemented in Tenso
 
 
 ## Extreme multi-label (XML) algorithms
----
+---------------------------------------
 Unlike multi-class or binary classification, extreme multi-label (XML) algorithms tag data points with a subset of labels (rather than
 just a single label), usually from an extremely large label-set. XML problems usually deal with a large number of labels (10<sup>3</sup> - 10^<sup>6</sup> labels) and a large number of dimensions and training points. 
 
