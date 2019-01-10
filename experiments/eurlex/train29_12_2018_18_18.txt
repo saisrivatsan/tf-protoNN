@@ -1,0 +1,24 @@
+2018-12-29 18:18:10,466:WARNING:From /n/home13/sravindranath/.conda/envs/tf/lib/python2.7/site-packages/tensorflow/contrib/learn/python/learn/datasets/base.py:198: retry (from tensorflow.contrib.learn.python.learn.datasets.base) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use the retry module or similar alternatives.
+2018-12-29 18:19:05,478:INFO:TRAIN-BATCH Iter = 100, t = 35.06, Loss = 492.72, Prec@1: 0.7422, Prec@3: 0.5924, Prec@5: 0.4828
+2018-12-29 18:19:05,568:INFO:VAL-ALL Iter = 100, t = 0.09, Loss = 494.03, Prec@1: 0.7304, Prec@3: 0.5662, Prec@5: 0.4642
+2018-12-29 18:19:13,284:INFO:TRAIN-BATCH Iter = 200, t = 41.20, Loss = 485.97, Prec@1: 0.7930, Prec@3: 0.6562, Prec@5: 0.5336
+2018-12-29 18:19:13,377:INFO:VAL-ALL Iter = 200, t = 0.09, Loss = 484.32, Prec@1: 0.7548, Prec@3: 0.5855, Prec@5: 0.4815
+2018-12-29 18:19:21,134:INFO:TRAIN-BATCH Iter = 300, t = 47.32, Loss = 471.29, Prec@1: 0.8203, Prec@3: 0.6354, Prec@5: 0.5188
+2018-12-29 18:19:21,233:INFO:VAL-ALL Iter = 300, t = 0.09, Loss = 480.01, Prec@1: 0.7632, Prec@3: 0.5988, Prec@5: 0.4896
+2018-12-29 18:19:29,029:INFO:TRAIN-BATCH Iter = 400, t = 53.46, Loss = 455.89, Prec@1: 0.8555, Prec@3: 0.6732, Prec@5: 0.5336
+2018-12-29 18:19:29,125:INFO:VAL-ALL Iter = 400, t = 0.09, Loss = 477.62, Prec@1: 0.7751, Prec@3: 0.6083, Prec@5: 0.4952
+2018-12-29 18:19:36,901:INFO:TRAIN-BATCH Iter = 500, t = 59.61, Loss = 439.89, Prec@1: 0.8711, Prec@3: 0.7057, Prec@5: 0.5687
+2018-12-29 18:19:36,992:INFO:VAL-ALL Iter = 500, t = 0.09, Loss = 476.29, Prec@1: 0.7757, Prec@3: 0.6156, Prec@5: 0.4996
+2018-12-29 18:19:44,807:INFO:TRAIN-BATCH Iter = 600, t = 65.79, Loss = 428.82, Prec@1: 0.8867, Prec@3: 0.7227, Prec@5: 0.5734
+2018-12-29 18:19:44,902:INFO:VAL-ALL Iter = 600, t = 0.09, Loss = 475.52, Prec@1: 0.7777, Prec@3: 0.6190, Prec@5: 0.5026
+2018-12-29 18:19:52,697:INFO:TRAIN-BATCH Iter = 700, t = 71.93, Loss = 424.02, Prec@1: 0.9062, Prec@3: 0.7253, Prec@5: 0.5766
+2018-12-29 18:19:52,787:INFO:VAL-ALL Iter = 700, t = 0.09, Loss = 475.28, Prec@1: 0.7773, Prec@3: 0.6224, Prec@5: 0.5052
+2018-12-29 18:20:00,608:INFO:TRAIN-BATCH Iter = 800, t = 78.10, Loss = 416.84, Prec@1: 0.9375, Prec@3: 0.7552, Prec@5: 0.6156
+2018-12-29 18:20:00,699:INFO:VAL-ALL Iter = 800, t = 0.09, Loss = 475.19, Prec@1: 0.7799, Prec@3: 0.6237, Prec@5: 0.5088
+2018-12-29 18:20:08,482:INFO:TRAIN-BATCH Iter = 900, t = 84.24, Loss = 413.88, Prec@1: 0.9297, Prec@3: 0.7669, Prec@5: 0.6234
+2018-12-29 18:20:08,579:INFO:VAL-ALL Iter = 900, t = 0.09, Loss = 474.93, Prec@1: 0.7767, Prec@3: 0.6274, Prec@5: 0.5112
+2018-12-29 18:20:16,465:INFO:TRAIN-BATCH Iter = 1000, t = 90.39, Loss = 421.61, Prec@1: 0.9570, Prec@3: 0.7969, Prec@5: 0.6430
+2018-12-29 18:20:16,557:INFO:VAL-ALL Iter = 1000, t = 0.09, Loss = 475.14, Prec@1: 0.7770, Prec@3: 0.6273, Prec@5: 0.5134
+2018-12-29 18:20:16,657:INFO:TEST-ALL Iter = 1000, t = 0.10, Loss = 489.49, Prec@1: 0.7732, Prec@3: 0.6099, Prec@5: 0.4883
