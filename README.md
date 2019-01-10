@@ -5,23 +5,23 @@ The repository contains **ProtoNN** (a KNN based algorithm) implemented in Tenso
 **Note:** some modifications have been made to improve run-time and performance on large-scale datasets. For more details about ProtoNN, please refer to the [ProtoNN: Compressed and Accurate kNN for Resource-scarce Devices](http://proceedings.mlr.press/v70/gupta17a.html).  If you are seeking to reproduce the results in the original paper, please use the official code provided by the authors.
 
 
-## Extreme multi-label (XML) algorithms
+### Extreme multi-label (XML) algorithms
 
 Unlike multi-class or binary classification, extreme multi-label (XML) algorithms tag data points with a subset of labels (rather than
 just a single label), usually from an extremely large label-set. XML problems usually deal with a large number of labels (10<sup>3</sup> - 10^<sup>6</sup> labels) and a large number of dimensions and training points. 
 
 For datasets, check: [XML-repository](http://manikvarma.org/downloads/XC/XMLRepository.html)
 
-## Required packages
----
+### Required packages
+
 1. Tensorflow
 2. [FAISS](https://github.com/facebookresearch/faiss)
 3. Numpy
 4. Scipy
 5. Easydict
  
-## Usage
----
+### Usage
+
 Check the [ipython notebook](https://github.com/saisrivatsan/tf-protoNN/blob/master/run_eurlex_with_preprocessing.ipynb) to run the code on Eurlex-4k dataset. To change the parameters, modify the [config file](https://github.com/saisrivatsan/tf-protoNN/blob/master/cfgs/config_eurlex_with_preprocessing.py).
 
 To run on a new dataset:
