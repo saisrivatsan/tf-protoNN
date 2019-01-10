@@ -1,3 +1,9 @@
+# --------------------------------------------------------
+# Tensorflow ProtoNN for Multi-label learning
+# Licensed under The MIT License [see LICENSE for details]
+# Written by Sai Srivatsa Ravindranath
+# --------------------------------------------------------
+
 from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
