@@ -11,7 +11,7 @@ For datasets, check: [XML-repository](http://manikvarma.org/downloads/XC/XMLRepo
 
 ## Required packages
 
-1. Tensorflow and
+1. Tensorflow
 2. [FAISS](https://github.com/facebookresearch/faiss)
 3. Numpy
 4. Scipy
@@ -27,4 +27,4 @@ To run on a new dataset:
 
 2. Create a config file in [cfgs folder](https://github.com/saisrivatsan/tf-protoNN/tree/master/cfgs) with the required parameters.
  
-3. Modify eurlex_train.py -> train.py (import the correct config file) and run
+3. For single GPU: Modify [eurlex\_train.py](https://github.com/saisrivatsan/tf-protoNN/blob/master/eurlex_train.py) -> train.py (import the correct config file). For training on multiple GPUs modify [eurlex\_multigpu\_train.py](https://github.com/saisrivatsan/tf-protoNN/blob/master/eurlex_multigpu_train.py) -> train.py and run `python train.py` 
