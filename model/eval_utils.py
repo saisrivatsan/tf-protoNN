@@ -38,7 +38,9 @@ def huber_loss(y_pred, y_true, d = 1.0):
     squared_loss = 0.5 * (error**2)
     linear_loss  = d * (error - 0.5 * d) 
     cond  = tf.less_equal(error, d)
-    return tf.reduce_mean(tf.reduce_sum(tf.where(cond, squared_loss, linear_loss)))
+    loss = tf.reduce_mean(tf.reduce_sum(tf.where(cond, squared_loss, linear_loss)))
+    tf.add_to_collection('losses', loss)
+    return loss
     
 def eval_precision_k(Y_pred_labels, Y_true):
     """

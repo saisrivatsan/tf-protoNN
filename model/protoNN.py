@@ -11,8 +11,7 @@ from __future__ import print_function
 import numpy as np
 import tensorflow as tf
 
-
-def create_var(name, shape, dtype = tf.float32, init = None, wd = None, summaries = False):
+def create_var(name, shape, dtype = tf.float32, init = None, wd = None, summaries = False, on_cpu = False):
     """ 
     Helper to create a Variable and summary if required
     Args:
@@ -24,9 +23,15 @@ def create_var(name, shape, dtype = tf.float32, init = None, wd = None, summarie
     Returns:
         Variable Tensor
     """
-            
-    var = tf.get_variable(name, shape = shape, dtype = dtype, initializer = init)
     
+    if on_cpu:
+        with tf.device('/cpu:0'):        
+            var = tf.get_variable(name, shape = shape, dtype = dtype, initializer = init)
+        print("%s variable created on cpu"%(name))
+    else:
+        var = tf.get_variable(name, shape = shape, dtype = dtype, initializer = init)
+        print("%s variable created on gpu"%(name))
+        
     """ Regularization """
     if wd is not None:
         reg = tf.multiply(tf.nn.l2_loss(var), wd, name = "{}/wd".format(var.op.name))
@@ -72,10 +77,13 @@ class Graph:
         B_shape = [self.config.d, self.config.m]
         Z_shape = [self.config.m, self.config.L]
         
+        on_cpu = True if (self.config.num_gpus > 1) else False
+            
+        
         self.gamma = tf.Variable(self.config.gamma, trainable = False)
-        self.W = create_var("W", W_shape, init = self.config.initW, wd = self.config.wd, summaries = self.config.summaries)
-        self.B = create_var("B", B_shape, init = self.config.initB, wd = self.config.wd, summaries = self.config.summaries)
-        self.Z = create_var("Z", Z_shape, init = self.config.initZ, wd = self.config.wd, summaries = self.config.summaries)
+        self.W = create_var("W", W_shape, init = self.config.initW, wd = self.config.wd, summaries = self.config.summaries, on_cpu = on_cpu)
+        self.B = create_var("B", B_shape, init = self.config.initB, wd = self.config.wd, summaries = self.config.summaries, on_cpu = on_cpu)
+        self.Z = create_var("Z", Z_shape, init = self.config.initZ, wd = self.config.wd, summaries = self.config.summaries, on_cpu = on_cpu)
 
         
     def forward(self, x):

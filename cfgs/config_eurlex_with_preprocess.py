@@ -22,9 +22,6 @@ __C.out_dir_name = "experiments/eurlex"
 if not os.path.exists(__C.out_dir_name):
     os.mkdir(__C.out_dir_name)
 
-# Number of GPUs to use.
-__C.num_gpus = 1
-
 # Data-related, Must match with properties of data loaded from __C.dir_name
 # N, Nt - train and test instances. D - Number of features. L - Number of Labels
 __C.N = 15539
@@ -52,8 +49,8 @@ __C.num_pts_per_cluster = 15
 __C.train_val_split_ratio = 0.8
 __C.train_batch_size = 256
 __C.test_batch_size = 256
-__C.learning_rate = 5e-4
-__C.wd = 1e-2
+__C.learning_rate = 1e-3
+__C.wd = 1e-1
 __C.summaries = False
 __C.train_restore_iter = 0
 __C.max_iter = 1000

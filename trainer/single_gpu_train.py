@@ -81,7 +81,7 @@ class Trainer:
         # Optimizer       
         learning_rate = tf.Variable(self.config.learning_rate, trainable=False)       
         opt = tf.train.AdamOptimizer(learning_rate)
-        train_step = opt.minimize(loss)
+        train_step = opt.minimize(total_loss)
         
         # Hard Threshold Ops
         HT_op = self.get_HT_op()
@@ -142,7 +142,7 @@ class Trainer:
             # Print Train Stats
             if (iter % self.config.train_print_iter) == 0:                
                 # Train Set Stats
-                Y_pred_labels, Loss = sess.run([y_pred_labels, loss], feed_dict = {x: X, y_true: Y})
+                Y_pred_labels, Loss = sess.run([y_pred_labels, total_loss], feed_dict = {x: X, y_true: Y})
                 P = eval_utils.eval_precision_k(Y_pred_labels, Y_true)
                 vals = (iter, time_elapsed_train, Loss, P[0], P[2], P[4])
                 fmt_str = "TRAIN-BATCH Iter = %d, t = %.2f, Loss = %.2f, Prec@1: %.4f, Prec@3: %.4f, Prec@5: %.4f"%vals
@@ -156,7 +156,7 @@ class Trainer:
                 tic = time.time()               
                 for _ in range(self.config.val_num_batches):
                     X, Y, Y_true = next(data.val_gen)
-                    Y_pred_labels, Loss = sess.run([y_pred_labels, loss], feed_dict = {x: X, y_true: Y})
+                    Y_pred_labels, Loss = sess.run([y_pred_labels, total_loss], feed_dict = {x: X, y_true: Y})
                     P = eval_utils.eval_precision_k(Y_pred_labels, Y_true)                    
                     Loss_tot += (Loss * Y_true.shape[0])
                     P_tot += (P * Y_true.shape[0])
@@ -176,7 +176,7 @@ class Trainer:
                 tic = time.time()               
                 for _ in range(self.config.test_num_batches):
                     X, Y, Y_true = next(data_t.test_gen)
-                    Y_pred_labels, Loss = sess.run([y_pred_labels, loss], feed_dict = {x: X, y_true: Y})
+                    Y_pred_labels, Loss = sess.run([y_pred_labels, total_loss], feed_dict = {x: X, y_true: Y})
                     P = eval_utils.eval_precision_k(Y_pred_labels, Y_true)                    
                     Loss_tot += (Loss * Y_true.shape[0])
                     P_tot += (P * Y_true.shape[0])

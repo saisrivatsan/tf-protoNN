@@ -22,9 +22,6 @@ __C.out_dir_name = "experiments/eurlex"
 if not os.path.exists(__C.out_dir_name):
     os.mkdir(__C.out_dir_name)
 
-# Number of GPUs to use.
-__C.num_gpus = 1
-
 # Data-related, Must match with properties of data loaded from __C.dir_name
 # N, Nt - train and test instances. D - Number of features. L - Number of Labels
 __C.N = 15539
