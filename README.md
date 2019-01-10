@@ -1,5 +1,5 @@
 # tf-protoNN
-The repository contains **ProtoNN** (a KNN based algorithm) implemented in Tensorflow for large-scale multi-label learning. The repository also has a script to run the training on multiple GPUs
+The repository contains **ProtoNN** (a KNN based algorithm) implemented in Tensorflow for large-scale multi-label learning. The repository also has a script to run the training on multiple GPUs. **Note:** some modifications have been made to improve run-time and performance on large-scale datasets. For more details about ProtoNN, please refer to the [ProtoNN: Compressed and Accurate kNN for Resource-scarce Devices](http://proceedings.mlr.press/v70/gupta17a.html).  If you are seeking to reproduce the results in the original paper, please use the official code.
 
 
 ## Extreme multi-label (XML) algorithms
